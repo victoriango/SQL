@@ -1,0 +1,27 @@
+-- Prompt 1: Order the items by price
+SELECT item_name, price
+FROM superstore
+ORDER BY price;
+
+-- Prompt 2: Show a statistic (sum, average, min, max, count) about the item prices
+SELECT SUM(price)
+FROM superstore;
+
+SELECT AVG(price)
+FROM superstore;
+
+SELECT item_name, price
+FROM superstore
+WHERE price = (SELECT MIN(price) FROM superstore);
+
+SELECT item_name, price
+FROM superstore
+WHERE price = (SELECT MAX(price) FROM superstore);
+
+SELECT COUNT(price), item_name
+FROM superstore
+GROUP BY item_name;
+
+-- Prompt 3: Show a statistic about the price for items in the category of "Kitchen Supplies"
+
+-- Prompt 4: Count how many air purifiers are in stock
